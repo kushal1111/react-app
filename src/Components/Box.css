@@ -1,0 +1,11 @@
+.box{
+    width: 200px;
+    height: 400px;
+    margin: 5px;
+    border: 1px solid blue;
+    display: block;
+    }
+
+.svg-inline--fa{
+    margin-inline: 10px;
+}
