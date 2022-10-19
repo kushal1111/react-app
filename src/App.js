@@ -59,6 +59,7 @@ const remove=(x)=>{
 }
 setCartItems(tempArr)
 }
+
 const cart=()=>{
   if (cartItems.length===0) return 'none'
   else return 'block'
