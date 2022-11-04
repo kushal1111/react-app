@@ -11,6 +11,7 @@ const Home=(props)=> {
   const [newCount,setCount]= useState(0)
   const [cartItems,setCartItems]=useState([])
   const [displayObj,setDisplayObj]=useState({})
+  const [product,setProduct]=useState([])
   
   
   const cartItemsObj=()=>{  //make object from array counting the number of items
@@ -28,24 +29,16 @@ const Home=(props)=> {
   const displayCart = (items)=>{    //display cart items
   setCartItems(state => [...state, items])
   }
- useEffect(()=>{cartItemsObj()},[cartItems])
+ useEffect(cartItemsObj,[cartItems])
+
+ useEffect(()=>{
+  console.log('hi')
+  fetch('http://localhost:3001/products').then((res)=>res.json())
+  .then((data)=>setProduct(data.productList))
   
-  const dbArr  = [{
-    name: 'nestle coffee',
-    price: '500',
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE_gcOE8tjHRpPDjPkNw4quvB096PHVNG6bmhJ3mGPnA&s",
-    currency: '$'
- },{
-    name: 'starsbucks',
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png",
-    price: '450',
-    currency: '$'
- },{
-    name: 'kitkat',
-    price: '900',
-    image:"https://m.media-amazon.com/images/I/61y6Fnw5hKL._SL1000_.jpg",
-    currency: '$'
- }] 
+},[])
+  
+  const dbArr  = [...product] 
  const itemKeys=Object.keys(displayObj)
  const itemValues=Object.values(displayObj)
  
