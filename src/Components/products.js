@@ -9,8 +9,7 @@ const Products =()=>{
         method:'POST',   
         body:JSON.stringify({name,price,image}),
         headers:{'content-Type':'application/json'}
-        }
-        
+        }        
         fetch('http://localhost:3001/products',requestOptions)
     }
     return(

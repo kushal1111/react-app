@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes}
 import Home from "./Components/Home";
 import Login from "./Components/login";
 import Products from "./Components/products";
+import Evalidation from "./Components/formik";
   
 
 const App=()=> {
@@ -12,6 +13,7 @@ return(
   <div>
     <Routes>
     <Route path ="/" element={<Home/>}/>
+    <Route path ="/formik" element={<Evalidation/>}/>
      <Route path ="/login" element={<Login/>}/>
      <Route path ="/products" element={<Products/>}/>
     </Routes>
