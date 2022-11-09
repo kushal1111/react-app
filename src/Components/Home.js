@@ -3,7 +3,7 @@ import Box from "./Box";
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRemove} from '@fortawesome/free-solid-svg-icons'
-
+import {Link} from "react-router-dom";
 
 
 const Home=(props)=> {
@@ -83,6 +83,14 @@ return(
   </tr>
   </tbody>
    </table></div>
+   <div className="menu">
+          <ul>
+            <li> <Link to="/">Home</Link> </li>
+            <li> <Link to="/userForms">userForms</Link> </li>
+            <li> <Link to="/login">Login</Link> </li>
+            <li> <Link to="/products">Products</Link> </li>
+          </ul>
+      </div>
     
 </div>
 
