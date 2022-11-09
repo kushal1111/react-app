@@ -6,7 +6,7 @@ import { faRemove} from '@fortawesome/free-solid-svg-icons'
 import {Link} from "react-router-dom";
 
 
-const Home=(props)=> {
+const Home=()=> {
 
   const [newCount,setCount]= useState(0)
   const [cartItems,setCartItems]=useState([])
